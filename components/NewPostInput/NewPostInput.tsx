@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./NewPostInput.module.css";
 
 // @func - input form component
-function NewPostInput(props) {
+function NewPostInput({ onSubmit }: { onSubmit: (value: string) => void }) {
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
@@ -19,15 +19,14 @@ function NewPostInput(props) {
     }
 
     // console.log(value);
-    props.onSubmit(value);
+    onSubmit(value);
     setValue("");
   };
 
   return (
-    <div>
+    <div className={styles.formSection}>
       <form className={styles.inputFormWrapper} onSubmit={handleSubmit}>
         <input
-          label={props.defaultText}
           value={value}
           onChange={handleChange}
           className={`${styles.inputSection} ${styles.formElement}`}
@@ -45,12 +44,12 @@ function NewPostInput(props) {
 }
 
 // @func - render input form component and add new input to parents list
-function NewTodo(props) {
+function NewTodo({ addNewTodo }: { addNewTodo: (todo: string) => void }) {
   const addTodo = (value) => {
-    props.addNewTodo(value);
+    addNewTodo(value);
   };
 
-  return <NewPostInput defaultText="Add Todo" onSubmit={addTodo} />;
+  return <NewPostInput onSubmit={addTodo} />;
 }
 
 export { NewPostInput, NewTodo };

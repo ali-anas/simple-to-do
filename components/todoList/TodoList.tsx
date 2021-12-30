@@ -1,14 +1,14 @@
+import React from "react";
 import { SingleTodo } from "../SingleTodo/SingleTodo";
 
 import styles from "./TodoList.module.css";
 
-export default function TodoList({
-  todoList,
-  removeTodo,
-}: {
+interface PropTypes {
   todoList: string[];
-  removeTodo: (e: KeyboardEvent, toRemove: string) => void;
-}) {
+  removeTodo: (e: React.MouseEvent, toRemove: string) => void;
+}
+
+export default function TodoList({ todoList, removeTodo }: PropTypes) {
   // console.log("todoList: ", todoList);
   return (
     <>

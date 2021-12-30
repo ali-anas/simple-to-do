@@ -1,12 +1,12 @@
 import Head from "next/head";
 import React, { useState } from "react";
 
-import Layout, { siteTitle } from "../components/layout/layout";
+import Layout, { siteTitle } from "../components/layout/Layout";
 import { NewTodo } from "../components/NewPostInput/NewPostInput";
 import TodoList from "../components/todoList/TodoList";
 
 export default function Home() {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState<string[]>([]);
 
   const addNewTodo = (todo) => {
     setTodoList([todo, ...todoList]);
@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
