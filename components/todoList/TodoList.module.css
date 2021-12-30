@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 2rem;
+  width: 60vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@media (max-width: 786px) {
+  .list {
+    width: 80vw;
+  }
+}

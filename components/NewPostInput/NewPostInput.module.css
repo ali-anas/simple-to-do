@@ -1,0 +1,20 @@
+.inputFormWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.formElement {
+  margin: var(--s);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputSection {
+  padding: var(--xs) var(--s);
+  border-radius: var(--xs);
+  border: 1px solid grey;
+}
