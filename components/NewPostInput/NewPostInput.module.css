@@ -1,20 +1,33 @@
+.formSection {
+  width: 100vw;
+}
+
 .inputFormWrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .formElement {
   margin: var(--s);
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .inputSection {
+  box-sizing: content-box;
+  width: 260px;
   padding: var(--xs) var(--s);
   border-radius: var(--xs);
   border: 1px solid grey;
+}
+
+.submitButton {
+  box-sizing: content-box;
+  padding: var(--xs) var(--s);
 }

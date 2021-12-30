@@ -24,19 +24,22 @@ function NewPostInput(props) {
   };
 
   return (
-    <div className={styles.inputFormWrapper}>
-      <form className={styles.formElement} onSubmit={handleSubmit}>
+    <div>
+      <form className={styles.inputFormWrapper} onSubmit={handleSubmit}>
         <input
           label={props.defaultText}
           value={value}
           onChange={handleChange}
-          className={styles.inputSection}
+          className={`${styles.inputSection} ${styles.formElement}`}
         />
-        <button disabled={value ? false : true} type="submit">
+        <button
+          disabled={value ? false : true}
+          type="submit"
+          className={`${styles.formElement} ${styles.submitButton}`}
+        >
           Submit
         </button>
       </form>
-      <div className={styles.formElement}></div>
     </div>
   );
 }
