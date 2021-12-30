@@ -22,7 +22,8 @@ export default function Home() {
 
     // console.log("delete request for: ", toRemove);
     let newList = todoList.filter(
-      (todoItem) => todoList.indexOf(todoItem) != todoList.indexOf(toRemove)
+      (todoItem: string) =>
+        todoList.indexOf(todoItem) != todoList.indexOf(toRemove)
     );
     setTodoList(newList);
   };
