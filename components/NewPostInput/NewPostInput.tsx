@@ -2,16 +2,25 @@ import React, { useState } from "react";
 
 import styles from "./NewPostInput.module.css";
 
+// type bounds for props of NewPostInput
+interface PropsForNewPostInput {
+  onSubmit: (value: string) => void;
+}
+
 // @func - input form component
-function NewPostInput({ onSubmit }: { onSubmit: (value: string) => void }) {
+function NewPostInput({ onSubmit }: PropsForNewPostInput) {
   const [value, setValue] = useState("");
 
-  const handleChange = (event) => {
+  const handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     event.preventDefault();
     setValue(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void = (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     if (!value) {
@@ -43,9 +52,14 @@ function NewPostInput({ onSubmit }: { onSubmit: (value: string) => void }) {
   );
 }
 
+// @func - type bounds for props of NewTodo component
+interface PropsForNewTodo {
+  addNewTodo: (todo: string) => void;
+}
+
 // @func - render input form component and add new input to parents list
-function NewTodo({ addNewTodo }: { addNewTodo: (todo: string) => void }) {
-  const addTodo = (value) => {
+function NewTodo({ addNewTodo }: PropsForNewTodo) {
+  const addTodo: (value: string) => void = (value: string) => {
     addNewTodo(value);
   };
 

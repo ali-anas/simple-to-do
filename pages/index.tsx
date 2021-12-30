@@ -8,11 +8,16 @@ import TodoList from "../components/todoList/TodoList";
 export default function Home() {
   const [todoList, setTodoList] = useState<string[]>([]);
 
-  const addNewTodo = (todo) => {
+  // @func - add new to-do item to todoList
+  const addNewTodo: (todo: string) => void = (todo: string) => {
     setTodoList([todo, ...todoList]);
   };
 
-  const removeTodo = (event, toRemove) => {
+  // @func - remove to-do item from todoList
+  const removeTodo: (event: React.MouseEvent, toRemove: string) => void = (
+    event: React.MouseEvent,
+    toRemove: string
+  ) => {
     event.preventDefault();
 
     // console.log("delete request for: ", toRemove);
